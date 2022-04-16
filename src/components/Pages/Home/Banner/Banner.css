@@ -1,0 +1,33 @@
+.banner-container{  
+    position: relative;
+    height: 600px;
+    z-index: 1000;  
+   
+}
+.banner-container::after{
+    content: '';
+    
+    position: absolute;
+    background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../../../../images/banner.jpg) ;
+    height: 520px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    z-index: -1;
+ 
+}
+.banner-content{
+    max-width: 300px;
+}
+article{
+    font-size: 1rem;
+    background-color:rgba(7,101,189,0.3);
+    padding: 10px 20px;
+    font-family: 'Handlee', cursive; 
+    border-radius: 5px;
+}
+.icon-color{
+    color: #4CAF50;
+}
