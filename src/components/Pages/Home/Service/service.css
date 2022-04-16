@@ -1,0 +1,10 @@
+.service-card{
+    transition: .4s;
+    cursor: pointer;
+}
+.service-card:hover{
+    transform: scale(.9);
+}
+.btn-color{
+    background-color: #AA7D83;
+}

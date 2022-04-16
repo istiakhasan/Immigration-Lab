@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "title":"Education Visa",
+        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
+        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
+        "price":250
+    },
+    {
+        "id":2,
+        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
+        "title":"Education Visa",
+        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
+        "price":250
+    },
+    {
+        "id":3,
+        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
+        "title":"Education Visa",
+        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos sadfdf asdf adfdsaf afd afdasdf af aafasd asdfsadf afdasdf afdadf adfadf afdasdf afadf  fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
+        "price":250
+    }
+]
