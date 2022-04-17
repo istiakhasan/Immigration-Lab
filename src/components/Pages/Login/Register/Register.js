@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import {FaMale } from 'react-icons/fa';
 import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth'
 import auth from '../../../../firebase.config'
 import { async } from '@firebase/util';
+import SocialSignIn from '../../../Shared/SocialSignIn/SocialSignIn';
 
 const Register = () => {
     const [
@@ -19,12 +20,15 @@ const Register = () => {
     if(error || profileError){
         errorMessage=<p className='text-center text-danger'>{error.message}</p>
     }
-
-    if(user){
-
-      console.log(user)
-    }
-
+   //if user exist then navigate to home page 
+     useEffect(()=>{
+      if(user){
+        navigate('/')
+        console.log(user)
+      }
+  
+     },[user])
+   
     //Submit button or sign up or register button handle
     const handleRegistration=async(e)=>{
         e.preventDefault()
@@ -70,8 +74,9 @@ const Register = () => {
             <button type='submit' className="signin-button">Register</button>
           </form>
             <div className="input-link mt-2">
-                <p>Already Have a Account? <span className='text-secondary'>OR</span> <Link className='text-primary' to="/login">Login</Link></p>
+                <p>Already Have a Account? <span className='text-secondary'></span> <Link className='text-primary' to="/login">Login</Link></p>
             </div>
+            <SocialSignIn />
         </div>
     </div>
     );

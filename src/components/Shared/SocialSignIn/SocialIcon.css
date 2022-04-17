@@ -1,0 +1,22 @@
+.socialicon-wraper{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 2px solid #644a4e;
+   width: fit-content;
+   padding: 5px 20px;
+   margin: 0 auto;
+   cursor: pointer;
+}
+.socialicon-wraper:hover{
+    background-color: #644a4e;
+    color: white;
+}
+.socialicon-wraper svg{
+   height: 20px;
+   width: 20px;
+}
+.socialicon-wraper p{
+    margin: 0;
+   
+}

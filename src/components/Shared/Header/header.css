@@ -23,3 +23,13 @@
  .navbar-toggler{
    background: #AA7D83 !important;
  }
+ .logout-btn{
+   background: #AA7D83 ;
+   border: none;
+   color: rgb(170, 37, 37);
+   
+ }
+ .logout-btn:hover{
+   color: white;
+   background: rgb(170, 37, 37);
+ }
