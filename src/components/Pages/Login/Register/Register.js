@@ -15,7 +15,7 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
       //reset password
       const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
         auth
@@ -25,8 +25,8 @@ const Register = () => {
       const emailRef=useRef()
       
     let errorMessage;
-    if(error || profileError){
-        errorMessage=<p className='text-center text-danger'>{error.message}</p>
+    if(error || profileError || resetError){
+        errorMessage=<p className='text-center text-danger'>{error?.message}</p>
     }
     const location=useLocation()
   
