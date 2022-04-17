@@ -1,7 +1,10 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaAddressCard, FaMale,FaPhone, FaServicestack } from 'react-icons/fa';
+import auth from '../../../firebase.config';
 
 const CheckOut = () => {
+    const [user]=useAuthState(auth)
 
     const handleCheckOut=(e)=>{
         e.preventDefault()
@@ -25,11 +28,11 @@ const CheckOut = () => {
                 <div className="username">
                     <FaMale />
                    
-                    <input type="text" name="name"  className="user-input" placeholder="Full Name" required/>
+                    <input type="text" name="name" value={user?.displayName} readOnly  className="user-input" placeholder="Full Name" required/>
                 </div>
                 <div className="username">
                     <img src="https://e7.pngegg.com/pngimages/490/260/png-clipart-email-email-miscellaneous-angle.png" alt="" />
-                    <input type="email" name="email"  className="user-input" placeholder="Email" required/>
+                    <input type="email" name="email" value={user?.email} readOnly  className="user-input" placeholder="Email" required/>
                 </div>
                 <div className="username">
                     <FaPhone />

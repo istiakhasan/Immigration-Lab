@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import googleicon from '../../../images/google.png'
 import giticon from '../../../images/github.png'
 import './SocialIcon.css'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.config';
 import {  useLocation, useNavigate } from 'react-router-dom';
-import Loading from '../Loading/Loading';
+
 
 const SocialSignIn = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user,error] = useSignInWithGoogle(auth);
+    const [signInWithGithub,user1,  gitError] = useSignInWithGithub(auth);
+
     const navigate=useNavigate()
     let errorMessage;
-    if(error){
+    if(error || gitError){
         errorMessage=<p className='text-center text-danger'>{error?.message}</p>
     }
     const location=useLocation()
-    console.log(location)
-    const from=location?.state?.from?.pathname || '/'
    
-    if(user){
-        navigate(from,{replace:true})
-    }
+    const from=location?.state?.from?.pathname || '/'
+    useEffect(()=>{
+        if(user || user1){
+            navigate(from,{replace:true})
+        }
+    },[user,user1])
+   
     return (
         <div>
              {errorMessage}
@@ -30,7 +34,7 @@ const SocialSignIn = () => {
              </div>
              <div className='socialicon-wraper rounded-pill mt-2'>
                  <img src={giticon} alt="" />
-                 <p className="ms-3"><small>Google Sign In</small></p>
+                 <p onClick={()=>signInWithGithub()} className="ms-3"><small>Github Sign In</small></p>
              </div>
             
         </div>

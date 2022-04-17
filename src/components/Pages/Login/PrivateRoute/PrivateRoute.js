@@ -6,6 +6,7 @@ import Loading from '../../../Shared/Loading/Loading';
 
 const PrivateRoute = ({children}) => {
     const [user,loading]=useAuthState(auth)
+   
     const location=useLocation()
      if(loading){
          return <Loading />
