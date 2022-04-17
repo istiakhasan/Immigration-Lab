@@ -20,11 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/home' element={<Home />}></Route>
-        <Route path='/checkout' element={
-          <PrivateRoute>
-            <CheckOut />
-          </PrivateRoute>
-        } />
+     
         <Route path='/checkout/:serviceId' element={
           <PrivateRoute>
             <CheckOut />

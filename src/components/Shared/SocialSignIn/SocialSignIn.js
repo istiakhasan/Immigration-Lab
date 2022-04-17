@@ -36,6 +36,8 @@ const SocialSignIn = () => {
                  <img src={giticon} alt="" />
                  <p onClick={()=>signInWithGithub()} className="ms-3"><small>Github Sign In</small></p>
              </div>
+
+             
             
         </div>
     );

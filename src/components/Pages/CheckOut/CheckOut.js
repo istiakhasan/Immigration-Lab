@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaAddressCard, FaMale,FaPhone, FaServicestack } from 'react-icons/fa';
+import { useParams } from 'react-router-dom';
 import auth from '../../../firebase.config';
 
 const CheckOut = () => {
     const [user]=useAuthState(auth)
+    const {serviceId}=useParams()
+    const [selectedService,setSelectedService]=useState({});
+
+ 
+
+      
+
+ 
+
+  
+ useEffect(()=>{
+ fetch('./../services.json')
+ .then(res=>res.json())
+ .then(data=>{
+    const exist=data.find(item=>item.id===+serviceId)
+    setSelectedService(exist)
+ })
+ 
+
+ },[serviceId])
 
     const handleCheckOut=(e)=>{
         e.preventDefault()
@@ -44,7 +65,7 @@ const CheckOut = () => {
                 </div>
                 <div className="username">
                    <FaServicestack />
-                    <input type="text" name="serviceName"  className="user-input" placeholder="Service" required/>
+                    <input type="text" defaultValue={selectedService?.title}   name="serviceName"  className="user-input" placeholder="Service" required/>
                 </div>
                 
                

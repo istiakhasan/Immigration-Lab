@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useEffect, useRef } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.config';
 import Loading from '../../../Shared/Loading/Loading';
 import SocialSignIn from '../../../Shared/SocialSignIn/SocialSignIn';
 import './Login.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+        auth
+      );
     const [
         signInWithEmailAndPassword,
         user,
@@ -13,6 +18,7 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
       const navigate=useNavigate()
+      const emailRef=useRef()
       //
       const location=useLocation()
  
@@ -49,6 +55,20 @@ const Login = () => {
           }
       }
 
+      //reset password
+      const resetPassword = async (e) => {
+        const email = emailRef.current.value;
+       
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else{
+            toast('please enter your email address');
+        }
+    }
+
+
     return (
         <div className='login-container'>
             <div className="login-div">
@@ -61,7 +81,7 @@ const Login = () => {
                  <div className="fields">
                     <div className="username">
                         <img src="https://e7.pngegg.com/pngimages/490/260/png-clipart-email-email-miscellaneous-angle.png" alt="" />
-                        <input type="email" name="email"  className="user-input" placeholder="Email"  required/>
+                        <input ref={emailRef} type="email" name="email"  className="user-input" placeholder="Email"  required/>
                     </div>
                     <div className="password">
                         <img src="https://flyclipart.com/thumb2/password-png-icon-free-download-121695.png" alt="" />
@@ -72,8 +92,11 @@ const Login = () => {
                 <button type='submit' name="button" className="signin-button">login</button>
                  </form>
                 <div className="input-link mt-2">
-                    <p>Forgate Password? <span className='text-secondary'></span> <Link className='text-primary' to="/register">Sign Up</Link></p>
+                    <p>Don't hava an account? <span className='text-secondary'></span> <Link className='text-primary' to="/register">Sign Up</Link></p>
                 </div>
+              
+                    <p  className='text-center'>Forgate password? <span className='text-secondary'></span> <span onClick={resetPassword} style={{cursor:"pointer"}} className='text-primary'>reset</span></p>
+                    <ToastContainer />
                 <SocialSignIn />
             </div>
         </div>
