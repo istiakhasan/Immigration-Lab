@@ -9,13 +9,18 @@ import {  useNavigate } from 'react-router-dom';
 const SocialSignIn = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate=useNavigate()
+    let errorMessage;
+    if(error){
+        errorMessage=<p className='text-center text-danger'>{error?.message}</p>
+    }
+   
     if(user){
         navigate('/')
     }
 
     return (
         <div>
-
+             {errorMessage}
              <div onClick={()=>signInWithGoogle()} className='socialicon-wraper rounded-pill'>
                  <img src={googleicon} alt="" />
                  <p className="ms-3"><small>Google Sign In</small></p>

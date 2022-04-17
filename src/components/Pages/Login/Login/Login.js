@@ -16,11 +16,11 @@ const Login = () => {
       if(error){
           errorMessage=<p className='text-center text-danger'>{error.message}</p>
       }
-      useEffect(()=>{
-        if(user){
-            navigate('/')
-        }
-      },[user])
+    //   useEffect(()=>{
+    //     if(user){
+    //         navigate('/')
+    //     }
+    //   },[user])
 
       
 
