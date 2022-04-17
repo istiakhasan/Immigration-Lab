@@ -5,7 +5,7 @@ import { NewspaperIcon,AcademicCapIcon,CheckCircleIcon } from '@heroicons/react/
 const Banner = () => {
  
   return (
-   <div className="container banner-container h-100">
+   <div className="container-fluid banner-container h-100">
      <div className='d-flex  justify-content-center align-items-center flex-column pt-5'>
      <article  className='text-white text-center my-5 pt-5'>
         <h4>Study In</h4>
@@ -15,7 +15,7 @@ const Banner = () => {
 
      </div>
       
-      <section className='row g-3 '>
+      <section className='row g-3  container mx-auto'>
     
         <div className='col-md-4   border-3 border-danger'>
         <div className="card h-100">

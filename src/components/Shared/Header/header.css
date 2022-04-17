@@ -1,0 +1,25 @@
+.active-link {
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 4px 8px;
+    border-bottom: 2px solid #F2E3E5;
+    color: #AA7D83;
+    font-weight: 500;
+    
+    
+  }
+  .link {
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 15px;
+    color: #AA7D83;
+    font-weight: 500;
+    padding: 4px 10px;
+  }
+ .active-link:hover, .link:hover{
+   background: gray;
+   color: white;
+ }
+ .navbar-toggler{
+   background: #AA7D83 !important;
+ }

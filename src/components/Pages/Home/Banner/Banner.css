@@ -1,36 +1,36 @@
-.banner-container{  
+.banner-container {
     position: relative;
-  
-    z-index: 1000; 
-  
-    position:relative;
-    
+    z-index: 1000;
+    position: relative;
     background-size: cover;
     z-index: -50;
-   
 }
-.banner-container::after{
-    content:' ';
+.banner-container::after {
+    content: ' ';
     height: 420px;
     position: absolute;
     top: 0;
-    background-image:url(../../../../images/banner.jpg) ;
+    background-image: url(../../../../images/banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     right: 0;
     width: 100%;
-    
     z-index: -50;
- 
+
 }
-.banner-content{
+
+.banner-content {
     max-width: 300px;
 }
-article{
+
+article {
     font-size: 1rem;
-    background-color:rgba(7,101,189,0.5);
+    background-color: rgba(0, 0, 0, .3);
     padding: 10px 20px;
-    font-family: 'Handlee', cursive; 
+    font-family: 'Lato' sans-serif;
     border-radius: 5px;
 }
-.icon-color{
+
+.icon-color {
     color: #aa7d83;
 }
