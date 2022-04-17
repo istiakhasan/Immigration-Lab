@@ -1,20 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import {FaMale } from 'react-icons/fa';
-import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth'
+import {useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useUpdateProfile} from 'react-firebase-hooks/auth'
 import auth from '../../../../firebase.config'
-import { async } from '@firebase/util';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import SocialSignIn from '../../../Shared/SocialSignIn/SocialSignIn';
 
+
 const Register = () => {
+    //create user
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
+      //reset password
+      const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+        auth
+      );
       const [updateProfile, profileError] = useUpdateProfile(auth);
       const navigate=useNavigate()
+      const emailRef=useRef()
       
     let errorMessage;
     if(error || profileError){
@@ -47,6 +55,17 @@ const Register = () => {
       }
      
     }
+    const resetPassword = async (e) => {
+        const email = emailRef.current.value;
+       
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else{
+            toast.error('please enter your email address');
+        }
+    }
 
     return (
         <div className='login-container'>
@@ -65,7 +84,7 @@ const Register = () => {
                 </div>
                 <div className="username">
                     <img src="https://e7.pngegg.com/pngimages/490/260/png-clipart-email-email-miscellaneous-angle.png" alt="" />
-                    <input type="email" name="email"  className="user-input" placeholder="Email" required/>
+                    <input ref={emailRef} type="email" name="email"  className="user-input" placeholder="Email" required/>
                 </div>
                 <div className="password">
                     <img src="https://flyclipart.com/thumb2/password-png-icon-free-download-121695.png" alt="" />
@@ -79,7 +98,9 @@ const Register = () => {
             <div className="input-link mt-2">
                 <p>Already Have a Account? <span className='text-secondary'></span> <Link className='text-primary' to="/login">Login</Link></p>
             </div>
+            <p  className='text-center'>Forgate password? <span className='text-secondary'></span> <span onClick={resetPassword} style={{cursor:"pointer"}} className='text-primary'>reset</span></p>
             <SocialSignIn />
+            <ToastContainer />
         </div>
         </div>
     );

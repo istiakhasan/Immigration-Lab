@@ -64,7 +64,7 @@ const Login = () => {
             toast('Sent email');
         }
         else{
-            toast('please enter your email address');
+            toast.error('please enter your email address');
         }
     }
 
