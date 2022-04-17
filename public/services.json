@@ -3,45 +3,45 @@
         "id":1,
         "title":"Education Visa",
         "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
-        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
-        "price":250
+        "description":" If you plan to study in Canada, either to improve your language skills or even getting an international degree, our educational division is ready to assist you. Contact the e-Visa Education specialists today.",
+        "price":5550
     },
     {
         "id":2,
-        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
-        "title":"Education Visa",
-        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
-        "price":250
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlnN-Z1KImOKjOEx1Otpg5U9pkhrLB6X0JJQ&usqp=CAU",
+        "title":"Language Courses",
+        "description":" If you wish to visit, study or work in Canada, our visa specialists can help you with your application. Contact us now.",
+        "price":1550
     },
     {
         "id":3,
-        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
-        "title":"Education Visa",
-        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos sadfdf asdf adfdsaf afd afdasdf af aafasd asdfsadf afdasdf afdadf adfadf afdasdf afadf  fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
-        "price":250
+        "img":"https://media.istockphoto.com/photos/consular-officer-of-usa-holding-passport-of-female-immigrant-visa-picture-id1183386020?k=20&m=1183386020&s=612x612&w=0&h=1o7cpN_6skoc2XP9EIoYvHE_HzjHSNdeJYRknjgDnJE=",
+        "title":"Family Visa",
+        "description":" If your goal is to immigrate to Canada, the Canadian government offers more than 80 programs for different application profiles. Our Regulated Canadian Immigration Consultants are ready to assist you.",
+        "price":2650
     }
     ,
     {
         "id":4,
-        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
-        "title":"Education Visa",
-        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos sadfdf asdf adfdsaf afd afdasdf af aafasd asdfsadf afdasdf afdadf adfadf afdasdf afadf  fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
-        "price":250
+        "img":"https://www.cicnews.com/wp-content/uploads/2020/03/20200302Coronavirus.jpg",
+        "title":"Tourist Visa",
+        "description":" We specialize in overcoming visa refusal and inadmissibility cases. Find out how we can assist you.",
+        "price":3450
     }
     ,
     {
         "id":5,
-        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
-        "title":"Education Visa",
-        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos sadfdf asdf adfdsaf afd afdasdf af aafasd asdfsadf afdasdf afdadf adfadf afdasdf afadf  fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
-        "price":250
+        "img":"https://www.financialexpress.com/wp-content/uploads/2022/02/1-613.jpg",
+        "title":"Job Visa",
+        "description":" Your career is one of the main factors to take into consideration when planning your immigration to Canada. Join e-Visa Talent Hub Career program, even if you are still in your home country, and be ready for the Canadian labour market.",
+        "price":3550
     }
     ,
     {
         "id":6,
-        "img":"https://www.studydirection.in/wp-content/uploads/2020/08/service-17.jpg",
-        "title":"Education Visa",
-        "description":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eos sadfdf asdf adfdsaf afd afdasdf af aafasd asdfsadf afdasdf afdadf adfadf afdasdf afadf  fuga qui ex distinctio! Expedita earum distinctio itaque necessitatibus dolore?",
-        "price":250
+        "img":"https://www.relocationafrica.com/wp-content/uploads/2017/03/Nigerian-passport-1030x579.jpg",
+        "title":"Business Immigration",
+        "description":" Canada offers several programs for entrepreneurs and investors. Find out if you are eligible.",
+        "price":2250
     }
 ]

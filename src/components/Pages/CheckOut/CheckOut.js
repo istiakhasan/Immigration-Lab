@@ -34,7 +34,7 @@ const CheckOut = () => {
         const phone=e.target.phone.value
         const address=e.target.address.value
         const serviceName=e.target.serviceName.value
-        alert(`name:${name}\nemail:${email}\nphone:${phone}\naddress:${address}\nService Name:${serviceName}`)
+        alert(`Thanks for your order \n name:${name}\nemail:${email}\nphone:${phone}\naddress:${address}\nService Name:${serviceName}`)
     }
     return (
         <div className='login-container'>
