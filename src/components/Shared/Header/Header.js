@@ -4,11 +4,13 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, Link } from 'react-router-dom'
 import auth from '../../../firebase.config';
+import Loading from '../Loading/Loading';
 import './header.css'
 
 const Header = () => {
 
   const [user, loading, error] = useAuthState(auth);
+
   //handle logout
   const handleLogOut=()=>{
     signOut(auth)
@@ -29,12 +31,19 @@ const Header = () => {
             <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/checkout">Checkout</NavLink>
             <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/about">About</NavLink>
             {
-              user ? (<button onClick={handleLogOut} className='logout-btn px-4 rounded-pill   fw-bold ms-4'>Logout</button>) : (
-                <>
-                  <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/login">Login</NavLink>
-                  <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/register">Register</NavLink>
-                </>
+              loading? (
+                <div className="spinner-grow" role="status">
+                <span className="sr-only">Loading...</span>
+               </div>
+              ):(
+                user ? (<button onClick={handleLogOut} className='logout-btn px-4 rounded-pill   fw-bold ms-4'>Logout</button>) : (
+                  <>
+                    <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/login">Login</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/register">Register</NavLink>
+                  </>
+                )
               )
+              
             }
 
 

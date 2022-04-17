@@ -15,23 +15,28 @@ import NotFound from './components/Shared/NotFound/NotFound';
 function App() {
   return (
     <div className='app'>
-        <Header />
-        
-       <Routes>
-         <Route path='/' element={<Home />}></Route>
-         <Route path='/home' element={<Home />}></Route>
-         <Route path='/checkout' element={
-           <PrivateRoute>
-             <CheckOut />
-           </PrivateRoute>
-         } />
-         <Route path='/checkout/:serviceId' element={<CheckOut />} />
-         <Route path='/login' element={<Login />} />
-         <Route path='/register' element={<Register />} />
-         <Route path='/about' element={<About />} />
-         <Route path='/blog' element={<Blog />} />
-         <Route path='*' element={<NotFound />} />
-       </Routes>
+      <Header />
+
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/checkout' element={
+          <PrivateRoute>
+            <CheckOut />
+          </PrivateRoute>
+        } />
+        <Route path='/checkout/:serviceId' element={
+          <PrivateRoute>
+            <CheckOut />
+          </PrivateRoute>
+        } />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/blog' element={<Blog />} />
+
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

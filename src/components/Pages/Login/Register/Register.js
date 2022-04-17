@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import {FaMale } from 'react-icons/fa';
 import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth'
 import auth from '../../../../firebase.config'
@@ -20,11 +20,14 @@ const Register = () => {
     if(error || profileError){
         errorMessage=<p className='text-center text-danger'>{error.message}</p>
     }
+    const location=useLocation()
+  
+    const from=location?.state?.from?.pathname || '/'
    //if user exist then navigate to home page 
      useEffect(()=>{
       if(user){
-        navigate('/')
-        console.log(user)
+        navigate(from,{replace:true})
+       
       }
   
      },[user])

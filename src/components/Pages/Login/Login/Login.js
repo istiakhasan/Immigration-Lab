@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.config';
+import Loading from '../../../Shared/Loading/Loading';
 import SocialSignIn from '../../../Shared/SocialSignIn/SocialSignIn';
 import './Login.css'
 const Login = () => {
@@ -16,6 +17,10 @@ const Login = () => {
       const location=useLocation()
       console.log(location)
       const from=location?.state?.from?.pathname || '/'
+
+    
+
+      //if any error
       let errorMessage;
       if(error){
           errorMessage=<p className='text-center text-danger'>{error.message}</p>
@@ -25,6 +30,12 @@ const Login = () => {
             navigate(from,{replace:true})
         }
       },[user])
+
+
+      //   loading spinner 
+      if(loading){
+        return <Loading />
+      }
 
       
 

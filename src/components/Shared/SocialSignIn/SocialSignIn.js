@@ -4,7 +4,8 @@ import giticon from '../../../images/github.png'
 import './SocialIcon.css'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.config';
-import {  useNavigate } from 'react-router-dom';
+import {  useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const SocialSignIn = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -13,11 +14,13 @@ const SocialSignIn = () => {
     if(error){
         errorMessage=<p className='text-center text-danger'>{error?.message}</p>
     }
+    const location=useLocation()
+    console.log(location)
+    const from=location?.state?.from?.pathname || '/'
    
     if(user){
-        navigate('/')
+        navigate(from,{replace:true})
     }
-
     return (
         <div>
              {errorMessage}
