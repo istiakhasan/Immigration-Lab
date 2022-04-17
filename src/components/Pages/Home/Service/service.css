@@ -5,6 +5,10 @@
 .service-card:hover{
     transform: scale(.9);
 }
+.service-card img{
+    height: 30vh;
+    border: 2px solid #AA7D83;
+}
 .btn-color{
     background-color: #AA7D83;
 }

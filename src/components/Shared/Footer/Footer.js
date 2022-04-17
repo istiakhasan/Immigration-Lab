@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <footer className='bg-dark text-white text-center pt-3 mt-5'>
              <div className=''>
-             <h3>Immigration Lab</h3>
+             <h3 className='text-white'>Immigration Lab</h3>
              <p><small>An unofficial website for  the Canada Imigration Service</small></p>
            
             <div className='icon-wraper'>

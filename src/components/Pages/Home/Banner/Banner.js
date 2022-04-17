@@ -8,10 +8,10 @@ const Banner = () => {
    <div className="container-fluid banner-container h-100">
      <div className=' pt-5'>
      <article  className='text-white text-center my-5 pt-5'>
-        <h4>Study In <span>Canada</span></h4>
+        <h4 style={{fontSize:"45px"}} className='text-white'>Study In <span className='text-danger'>Canada</span></h4>
         <hr />
         
-        <p className='d-none d-lg-block'>Travel , Tourism,Engineering,Business,Health,Science,It and maney more...</p>
+        <p className='d-none d-lg-block '>Travel , Tourism, Engineering, Business, Health, Science and maney more...</p>
       </article>
 
      </div>
