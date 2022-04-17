@@ -13,7 +13,7 @@ const Register = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-      const [updateProfile, updating, profileError] = useUpdateProfile(auth);
+      const [updateProfile, profileError] = useUpdateProfile(auth);
       const navigate=useNavigate()
       
     let errorMessage;
@@ -21,13 +21,13 @@ const Register = () => {
         errorMessage=<p className='text-center text-danger'>{error.message}</p>
     }
    //if user exist then navigate to home page 
-    //  useEffect(()=>{
-    //   if(user){
-    //     navigate('/')
-    //     console.log(user)
-    //   }
+     useEffect(()=>{
+      if(user){
+        navigate('/')
+        console.log(user)
+      }
   
-    //  },[user])
+     },[user])
    
     //Submit button or sign up or register button handle
     const handleRegistration=async(e)=>{
