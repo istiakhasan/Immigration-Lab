@@ -1,8 +1,46 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {FaMale } from 'react-icons/fa';
+import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth'
+import auth from '../../../../firebase.config'
+import { async } from '@firebase/util';
 
 const Register = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      const [updateProfile, updating, profileError] = useUpdateProfile(auth);
+      const navigate=useNavigate()
+      
+    let errorMessage;
+    if(error || profileError){
+        errorMessage=<p className='text-center text-danger'>{error.message}</p>
+    }
+
+    if(user){
+
+      console.log(user)
+    }
+
+    //Submit button or sign up or register button handle
+    const handleRegistration=async(e)=>{
+        e.preventDefault()
+      const name=e.target.name.value
+      const email=e.target.email.value
+      const password=e.target.password.value
+   
+      if( email && password){
+        await createUserWithEmailAndPassword(email,password)
+        await updateProfile({ displayName:name});
+        
+        console.log('Updated profile');
+      }
+     
+    }
+
     return (
         <div className='login-container'>
         <div className="login-div">
@@ -11,25 +49,28 @@ const Register = () => {
                 Register
             </div>
 
-            <div className="fields">
+          <form onSubmit={handleRegistration}>
+          <div className="fields">
                 <div className="username">
                     <FaMale />
                    
-                    <input type="text" name=""  className="user-input" placeholder="Name" />
+                    <input type="text" name="name"  className="user-input" placeholder="Name" required/>
                 </div>
                 <div className="username">
                     <img src="https://e7.pngegg.com/pngimages/490/260/png-clipart-email-email-miscellaneous-angle.png" alt="" />
-                    <input type="email" name=""  className="user-input" placeholder="Email" />
+                    <input type="email" name="email"  className="user-input" placeholder="Email" required/>
                 </div>
                 <div className="password">
                     <img src="https://flyclipart.com/thumb2/password-png-icon-free-download-121695.png" alt="" />
-                    <input type="password" name=""  placeholder="password" className="pass-input" />
+                    <input type="password" name="password"  placeholder="password" className="pass-input"  required/>
                 </div>
                
             </div>
-            <button name="button" className="signin-button">Register</button>
+            {errorMessage}
+            <button type='submit' className="signin-button">Register</button>
+          </form>
             <div className="input-link mt-2">
-                <a>Already Have a Account? <span className='text-secondary'>OR</span></a> <Link className='text-primary' to="/login">Login</Link>
+                <p>Already Have a Account? <span className='text-secondary'>OR</span> <Link className='text-primary' to="/login">Login</Link></p>
             </div>
         </div>
     </div>

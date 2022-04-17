@@ -6,11 +6,12 @@ const Banner = () => {
  
   return (
    <div className="container-fluid banner-container h-100">
-     <div className='d-flex  justify-content-center align-items-center flex-column pt-5'>
+     <div className=' pt-5'>
      <article  className='text-white text-center my-5 pt-5'>
-        <h4>Study In</h4>
-        <h1>Australia</h1>
-        <p>Travel $ Tourism,Engineering,Business,Health,Science,It and maney more...</p>
+        <h4>Study In <span>Australia</span></h4>
+        <hr />
+        
+        <p className='d-none d-lg-block'>Travel $ Tourism,Engineering,Business,Health,Science,It and maney more...</p>
       </article>
 
      </div>

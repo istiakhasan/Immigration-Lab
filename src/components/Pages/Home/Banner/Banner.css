@@ -12,23 +12,30 @@
     top: 0;
     background-image: url(../../../../images/banner2.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain 100%;
+    
     right: 0;
     width: 100%;
     z-index: -50;
 
 }
 
-.banner-content {
-    max-width: 300px;
-}
+
 
 article {
-    font-size: 1rem;
+    
+    height: auto;
+    width: fit-content;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, .3);
-    padding: 10px 20px;
+    padding: 10px 5px;
     font-family: 'Lato' sans-serif;
     border-radius: 5px;
+}
+article>p{
+  width: 80%;
+  margin: 0 auto;
+  word-wrap: break-word;
 }
 
 .icon-color {
