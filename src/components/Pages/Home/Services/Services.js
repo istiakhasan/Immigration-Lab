@@ -11,7 +11,7 @@ const Services = () => {
     },[])
     return (
         <section className=''>
-            <h1 className='text-center'>Our Services</h1>
+            <h1 className='text-center'>My Services</h1>
              <div className="row g-4 mt-5 pt-5">
                  {
                   services.map(service=>(

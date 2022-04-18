@@ -8,13 +8,13 @@ import {  useLocation, useNavigate } from 'react-router-dom';
 
 
 const SocialSignIn = () => {
-    const [signInWithGoogle, user,error] = useSignInWithGoogle(auth);
-    const [signInWithGithub,user1,  gitError] = useSignInWithGithub(auth);
+    const [signInWithGoogle, user,loading,error] = useSignInWithGoogle(auth);
+    const [signInWithGithub, user1, gitloading, giterror] = useSignInWithGithub(auth);
 
     const navigate=useNavigate()
     let errorMessage;
-    if(error || gitError){
-        errorMessage=<p className='text-center text-danger'>{error?.message}</p>
+    if (error || giterror) {
+        errorMessage = <p className='text-danger text-center'>{error?.message} {giterror?.message}</p>
     }
     const location=useLocation()
    

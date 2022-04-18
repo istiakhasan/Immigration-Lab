@@ -2,12 +2,12 @@ import { getAuth } from "firebase/auth"
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3AO0YfpVNJgOYKFd7y6hbUPHTDiJlK-o",
-  authDomain: "immigration-lab-47778.firebaseapp.com",
-  projectId: "immigration-lab-47778",
-  storageBucket: "immigration-lab-47778.appspot.com",
-  messagingSenderId: "155955451166",
-  appId: "1:155955451166:web:b5bbf823b5699a4b83e50f"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

@@ -28,8 +28,8 @@ const About = () => {
                                 is an opportunity to make significant contribution along with developing personal skills. I always look forward to new challenges
                                 and experiences. I have ability to learn anything very quickly.</p>
                             <h3 className='mt-5'>Learning Javascript</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                            <div className="progress">
+                                <div className="progress-bar" role="progressbar" aria-valuenow="70"
                                     aria-valuemin="0" aria-valuemax="100" style={{ width: "70%", background: "#F5ABAC" }}>
                                     70%
                                 </div>
