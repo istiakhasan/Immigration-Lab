@@ -13,7 +13,7 @@ const Service = ({service}) => {
                     <h5 className="card-title">
                         {title}
                     </h5>
-                    <p>${price}</p>
+                    <p className='price '>${price}</p>
                     <p className='text-secondary'>{description}</p>
                 </div>
                 <div>

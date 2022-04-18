@@ -12,3 +12,8 @@
 .btn-color{
     background-color: #AA7D83;
 }
+.card-title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: #031F4B;
+}
