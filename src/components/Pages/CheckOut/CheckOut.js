@@ -14,7 +14,7 @@ const CheckOut = () => {
       
 
  
-
+//load specific  data from service json
   
  useEffect(()=>{
  fetch('./../services.json')
@@ -27,6 +27,8 @@ const CheckOut = () => {
 
  },[serviceId])
 
+
+ //handle checkout from and  show input value to alert
     const handleCheckOut=(e)=>{
         e.preventDefault()
         const name=e.target.name.value

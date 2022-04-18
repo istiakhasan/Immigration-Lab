@@ -6,14 +6,16 @@ import auth from '../../../../firebase.config'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialSignIn from '../../../Shared/SocialSignIn/SocialSignIn';
+import Email from '../../../../images/message.png'
+import password from '../../../../images/password.png'
 
 
 const Register = () => {
-    //create user
+    //create user and send virification email
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
+       
         error,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
       //reset password
@@ -83,11 +85,11 @@ const Register = () => {
                     <input type="text" name="name"  className="user-input" placeholder="Name" required/>
                 </div>
                 <div className="username">
-                    <img src="https://e7.pngegg.com/pngimages/490/260/png-clipart-email-email-miscellaneous-angle.png" alt="" />
+                    <img src={Email} alt="" />
                     <input ref={emailRef} type="email" name="email"  className="user-input" placeholder="Email" required/>
                 </div>
                 <div className="password">
-                    <img src="https://flyclipart.com/thumb2/password-png-icon-free-download-121695.png" alt="" />
+                    <img src={password} alt="" />
                     <input type="password" name="password"  placeholder="password" className="pass-input"  required/>
                 </div>
                
