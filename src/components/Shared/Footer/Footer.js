@@ -13,11 +13,14 @@ const Footer = () => {
              <p><small>An unofficial website for  the Canada Imigration Service</small></p>
            
             <div className='icon-wraper'>
+              <a href='https://www.youtube.com/' target="_blank"><FaYoutube  className="text-danger" height={50} width={50} /> </a>
+              <a href='https://www.linkedin.com/' target="_blank"><FaLinkedin className="text-primary" height={50} width={50} /> </a>
+              <a href='https://twitter.com/Istiak__Hasan' target="_blank"><FaTwitter className='text-white' height={50} width={50} />  </a>
+              <a href={"https://www.facebook.com/istieak"} target="_blank"> <FaFacebook className='text-primary  rounded-pill' />  </a>
+               
+                
+               
               
-               <FaYoutube className="text-danger" height={50} width={50} /> 
-               <FaLinkedin className="text-primary" height={50} width={50} /> 
-               <FaTwitter className='text-white' height={50} width={50} /> 
-               <FaFacebook className='text-primary  rounded-pill' /> 
             </div>
              </div>
             <p style={{background:"black"}} className='mt-4 pb-2'>{year} <FaCopyright /> all rights reserved design by istiak hasan</p>
