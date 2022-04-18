@@ -14,7 +14,7 @@ const About = () => {
 
                         </div>
                         {/* about description container */}
-                        <div className="col-md-6 pt-3 pb-5 px-3 bg-white">
+                        <div className="col-md-6 pt-3 rounded-3 pb-5 px-3 bg-white">
                             <h3 className='name-title'>Istiak Hasan</h3>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <h5>Web Developer</h5>
