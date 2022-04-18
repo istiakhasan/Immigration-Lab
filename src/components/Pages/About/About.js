@@ -8,13 +8,13 @@ const About = () => {
             <main className='container my-5'>
                 <div>
                     {/* about image  container */}
-                    <div className="row mt-5 pt-5 gy-5">
+                    <div className="row mt-5 pt-5 gy-5 ">
                         <div className="col-md-6 d-flex justify-content-lg-end justify-content-center">
                             <img className='about-img' src={AboutImage} alt="" />
 
                         </div>
                         {/* about description container */}
-                        <div className="col-md-6">
+                        <div className="col-md-6 pt-3 pb-5 px-3 bg-white">
                             <h3 className='name-title'>Istiak Hasan</h3>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <h5>Web Developer</h5>
