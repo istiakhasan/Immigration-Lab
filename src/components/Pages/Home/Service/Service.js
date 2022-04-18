@@ -6,7 +6,7 @@ const Service = ({service}) => {
     const {img,title,description,price,id}=service
     const navigate=useNavigate()
     return (
-        <div className='col-md-4'>
+        <div className='col-md-6 col-lg-4'>
             <div className="card service-card border-0 h-100 bg-none p-2">
                 <img src={img} alt="" />
                 <div className="card-body">

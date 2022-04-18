@@ -27,4 +27,5 @@ Live Site Full Url Here: [https://dream-car-07.netlify.app/](https://dream-car-0
 4.React-toastify </br>
 5.React-icons </br>
 6.Hero-icons </br>
-7.react-firebase-hooks
+7.react-firebase-hooks </br>
+8.media query
